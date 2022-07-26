@@ -1,4 +1,4 @@
-var drawBitmoji = function(bodyX, bodyY){
+var onehalf = function(bodyX, bodyY){
 fill(0, 0, 0);
 ellipse(bodyX +50, bodyY +50, 59, 74);//hoodie
 fill(122, 92, 66);
@@ -18,6 +18,8 @@ line(bodyX +35, bodyY +45, bodyX +47, bodyY +46);//eyebrows
 fill(92, 41, 66);
 noStroke();
 bezier(bodyX +50, bodyY +63, bodyX +40, bodyY +62, bodyX +61, bodyY +75, bodyX +51, bodyY +50);//nose
+};
+var otherhalf = function(bodyX, bodyY){
 fill(20, 12, 12);
 rect(bodyX +31, bodyY +21, 35, 10);//hair
 rect(bodyX +59, bodyY +21, 10, 10);//hair
@@ -36,5 +38,10 @@ ellipse(bodyX +30, bodyY +82, 2, 34);
 ellipse(bodyX +70, bodyY +82, 2, 34);
 fill(255, 0, 0);
 text("DAF", bodyX +64, bodyY +96);
+};
+
+var drawBitmoji = function(bodyX, bodyY){
+   onehalf(bodyX, bodyY);
+   otherhalf(bodyX, bodyY);
 };
 drawBitmoji(random(40, 300), random(40, 300));
