@@ -6,7 +6,7 @@ var frogX = 10;
 var frogY = 300;
 draw = function() {
     background(255, 255, 255);
-var drawBitmoji = function(){
+var drawhalf = function(){
 fill(0, 0, 0);
 ellipse(bodyX +50, bodyY +50, 59, 74);//hoodie
 fill(122, 92, 66);
@@ -24,6 +24,8 @@ ellipse(bodyX +42, bodyY +50, 3, 2);//eyes
 line(bodyX +65, bodyY +45, bodyX +54, bodyY +46);//eyebrows
 line(bodyX +35, bodyY +45, bodyX +47, bodyY +46);//eyebrows
 fill(92, 41, 66);
+};
+var drawotherh = function(){
 noStroke();
 bezier(bodyX +50, bodyY +63, bodyX +40, bodyY +62, bodyX +61, bodyY +75, bodyX +51, bodyY +50);//nose
 fill(20, 12, 12);
@@ -45,18 +47,23 @@ ellipse(bodyX +70, bodyY +82, 2, 34);
 fill(255, 0, 0);
 text("DAF", bodyX +64, bodyY +96);
 };
+var drawBitmoji = function(){
+  drawhalf();
+  drawotherh();
+};
 drawBitmoji();
 bodyX = bodyX +bitSpeed;
 
 
-var froggy = function(){
+var froghalf = function(){
 noStroke();
 fill(30, 204, 91); // a nice froggy green!
 
 ellipse(frogX, frogY, 200, 100); // face
 ellipse(frogX - 50, frogY - 50, 40, 40); // left eye socket
 ellipse(frogX+ 50, frogY - 50, 40, 40); // right eye socket
-
+};
+var frogotherh = function(){
 fill(255, 255, 255); // for the whites of the eyes!
 ellipse(frogX - 50, frogY - 50, 30, 30); // left eyeball
 ellipse(frogX + 50, frogY - 50, 30, 30); // right eyeball
@@ -67,6 +74,10 @@ ellipse(frogX, frogY, 140, 40);
 
 rect(frogX + 50, frogY - 50, 12, 10);
 rect(frogX - 50, frogY - 50, 12, 10);
+};
+var froggy = function(){
+   froghalf();
+   frogotherh();
 };
 froggy();
 frogX = frogX + frogSpeed;
